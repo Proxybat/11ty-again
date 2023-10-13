@@ -1,0 +1,42 @@
+---
+layout: indexpage.njk
+title: my art gallery
+---
+
+<h2>art page</h2>
+
+<p>art thumbnails go here</p>
+
+<div class="post_list-container">
+    <ul class="post_list">
+        {% for post in collections.art %}
+            <li class="post_container">
+                <div class="title_date">
+                    <a href="{{ post.url }}" class="post_title">{{ post.data.title }}</a>
+                    <p class="post_date">
+                        {{ post.data.date }}</p>
+                </div>
+                <div class="thumb_rating">
+                    <a href="{{ post.url }}" class="post_thumb-link">
+                        <img
+                src="{{ post.data.thumb }}"
+                alt="{{ post.data.thumbAlt }}"
+                class="post_thumb-img"/>
+                    </a>
+                    <p class="post_rating">Rating: {{ post.data.rating }}</p>
+                </div>
+                <div class="description_tags">
+                    <p class="post_description">{{ post.data.thumbDescription }}</p>
+                    <div class="post_tags">
+                        Tagged: 
+                        {% for tag, posts in collections | dictsort %}
+                            {%- if tag != "all" and tag != "posts" %}
+                                <a href="/tags/{{ tag }}/">#{{ tag }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Grab title from the page data and dump it here -->
+    <title>my art gallery</title>
+  </head>
+  <body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/tags/">Tags (layout-njk)</a>
+    </nav>
+    <header><h1>my art gallery</h1></header>
+    <!-- Grab the content from the page data, dump it here, and mark it as safe -->
+    <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+    
+<h2>art page</h2>
+
+<p>art thumbnails go here</p>
+
+<div class="post_list-container">
+    <ul class="post_list">
+        
+        <li class="post_container">
+            <div class="title_date">
+            <a href="/artwork/art1/" class="post_title">art 1</a>
+            <p class="post_date">test date</p>
+            </div>
+            <div class="thumb_rating">
+            <a href="/artwork/art1/" class="post_thumb-link">
+                <img
+                src="/../art-assets/thumb/thumb1.jpg"
+                alt="NaN"
+                class="post_thumb-img"
+                />
+            </a>
+            <p class="post_rating">Rating: M</p>
+            </div>
+            <div class="description_tags">
+            <p class="post_description">this is the description for art1!</p>
+            <div class="post_tags">
+            
+                <a href="#">art,tag1</a>
+                
+            </div>
+            </div>
+        </li>
+        
+        <li class="post_container">
+            <div class="title_date">
+            <a href="/artwork/art2/" class="post_title">art 2</a>
+            <p class="post_date">test date</p>
+            </div>
+            <div class="thumb_rating">
+            <a href="/artwork/art2/" class="post_thumb-link">
+                <img
+                src="/../art-assets/thumb/thumb2.jpg"
+                alt="NaN"
+                class="post_thumb-img"
+                />
+            </a>
+            <p class="post_rating">Rating: pg13</p>
+            </div>
+            <div class="description_tags">
+            <p class="post_description">this is the description for art2!</p>
+            <div class="post_tags">
+            
+                <a href="#">art,tag2</a>
+                
+            </div>
+            </div>
+        </li>
+        
+        <li class="post_container">
+            <div class="title_date">
+            <a href="/artwork/art-template/" class="post_title">artwork title</a>
+            <p class="post_date">test date</p>
+            </div>
+            <div class="thumb_rating">
+            <a href="/artwork/art-template/" class="post_thumb-link">
+                <img
+                src="art-assets/thumb/thumb1.jpg"
+                alt="NaN"
+                class="post_thumb-img"
+                />
+            </a>
+            <p class="post_rating">Rating: pg</p>
+            </div>
+            <div class="description_tags">
+            <p class="post_description">says weather or not its sfw and a basic description for non-screenreader users.</p>
+            <div class="post_tags">
+            
+                <a href="#">art,tag1,tag2</a>
+                
+            </div>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!---->
+  </body>
+</html>

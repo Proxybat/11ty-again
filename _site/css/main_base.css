@@ -1,0 +1,152 @@
+:root {
+    /* Set sans-serif & mono fonts */
+    --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+      "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
+      "Helvetica Neue", sans-serif;
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  
+    /*other crap*/
+    --bgprimary: #0c0c0c;
+    --colprimary: #faebd7;
+    --bgsecondary:#faebd7;
+  
+    --linkprimary:#d25807;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* Set the font globally */
+    font-family: var(--sans-font);
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    background-color: var(--bgprimary);
+    color: var(--colprimary);
+    margin: 0px;
+  }
+  
+  nav {
+    /* position: absolute; */
+    /*background-color: rgba(250, 235, 215, 0.8);
+    border-bottom: 2px solid #0c0c0ca7;*/
+    background-color: var(--bgsecondary);
+    padding: 10px;
+    margin: 0 !important;
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    left: 0%;
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  nav a + a {
+    margin-left: 10px;
+  }
+  
+  a {
+    font-weight: 800;
+    text-decoration: underline;
+    color: var(--linkprimary);
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  body > header {
+    text-align: center;
+    padding: 0 0.5rem 2rem 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  li {
+    margin: 2em 0;
+  }
+  
+  /*thumbnail stuff*/
+  
+  .post_list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .post_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    /*margin-left: -40px !important;*/
+  
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .post_container {
+    display: flex;
+    flex-direction: column;
+    background: #323232;
+    width: 30%;
+    padding: 16px;
+  }
+  
+  
+  .title_date {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-evenly;
+  }
+  
+  .post_title {
+    font-size: 2rem;
+  }
+  
+  .post_date {
+      margin: 3px 0px;
+  }
+  
+  .post_thumb-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .post_thumb-img {
+    max-width: 100%;
+    width: 90%;
+  }
+  
+  /*MOBILE STUFF*/
+  @media screen and (max-width: 599px) {
+    .post_list {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+    .post_container {
+      width: 95%;
+    }
+  }
+  
+  /*TABLET STUFF*/
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    .post_list {
+      width: 95%;
+      justify-content: space-between;
+    }
+    .post_container {
+      width: 48%;
+    }
+  }
+  

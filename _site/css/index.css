@@ -1,0 +1,26 @@
+/*INDEX STYLE GOES HERE*/
+
+:root {
+  /* Set sans-serif & mono fonts */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica,
+    "Helvetica Neue", sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+  /*other crap*/
+  --bgprimary: #0c0c0c;
+  --colprimary: #faebd7;
+
+  --bgsecondary:#faebd7;
+
+  --linkprimary:#d25807;
+}
+
+body {
+  background-color: var(--bgprimary);
+}
+
+.index__main {
+  padding: 0px 20px;
+  /*background: red;*/
+}

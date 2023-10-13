@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main_base.css">
+        <link rel="stylesheet" href="/css/categories.css">
+        <!-- Grab title from the page data and dump it here -->
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <nav>{% include 'partials/navigation.njk' %}</nav>
+
+        <main class="categories__main">
+            {{ content | safe }}
+
+            <!--<ul>
+            {% include 'partials/tag-loop.njk' %}
+        </ul>-->
+        </main>
+
+    </body>
+</html>

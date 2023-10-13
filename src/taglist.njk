@@ -1,0 +1,29 @@
+---
+layout: category.njk
+title: taglist
+permalink: /tags/
+---
+
+<h1>Tags</h1>
+
+<p>Here's a list of all the tags I use!</p>
+
+<ul>
+  {% set orderedCollection = collections | sortObjectByKey %}
+  {%- for tag,
+      posts in orderedCollection %}
+    <li>
+      <a href="/tags/{{tag | slugify}}/">
+        <strong>{{ tag | slugify }}</strong>
+      </a> - {{
+        posts | length }} posts </li>
+  {%- endfor -%}
+</ul>
+
+<!--<ul>
+      {% set orderedCollection = collections | sortObjectByKey %} {%- for tag,
+      posts in orderedCollection %}
+      <li><a href="/tags/{{tag | slugify}}/"><strong>{{ tag | slugify }}</strong></a> - {{
+        posts | length }} posts </li>
+      {%- endfor -%}
+</ul>-->

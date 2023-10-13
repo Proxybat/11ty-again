@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/art_base.css">
+    <!-- <link rel="stylesheet" href="/css/artpiece.css"> -->
+    <!-- Grab title from the page data and dump it here -->
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <nav>{% include 'partials/navigation.njk' %}</nav>
+
+    <main>
+      <header>
+        <h1>{{ title }} - {{rating}}</h1>
+      </header>
+      <article>
+        <!-- Grab the content from the page data, dump it here, and mark it as safe -->
+        <!-- Safe docs: https://mozilla.github.io/nunjucks/templating.html#safe -->
+        {{ content | safe }}
+      </article>
+      <div class="artpiece__dates">
+        <p>{{ date }}
+        </div>
+        <div class="cluster">
+        Tagged: 
+          {% for tag, posts in collections | dictsort %}
+            {%- if tag != "all" and tag != "posts" %}
+              <a href="/tags/{{ tag }}/">#{{ tag }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </main>
+    </body>
+  </html>
