@@ -1,5 +1,5 @@
 {
-  "layout": "artpiece",
+  "layout": "artpiece.njk",
   "tags": "art",
   "notes": "Notes",
   "imgdep": "Image description"

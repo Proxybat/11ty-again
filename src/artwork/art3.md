@@ -5,7 +5,10 @@ thumb: "art-assets/art/queen1.png"
 thumbAlt: simple alt-text that describes the image
 thumbDescription: says weather or not its sfw and a basic description for non-screenreader users.
 rating: pg
-tags: test
+tags:
+  - abstract
+  - pixel
+  - painting
 ---
 
 ## I'm probably going to have to back this up and make another copy all over again.

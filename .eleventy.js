@@ -1,22 +1,18 @@
 module.exports = function (eleventyConfig) {
-  // Tag thingy
-  eleventyConfig.addFilter("sortObjectByKey", (collection) => {
-    const entries = Object.entries(collection);
-    const toReturn = entries.sort((entry1, entry2) => {
-      if (entry1[0] <= entry2[0]) return -1;
-      else return 1;
-    });
-    return toReturn;
+
+  // Filters
+
+  // Return all the tags used in a collection
+  eleventyConfig.addFilter("getAllTags", collection => {
+    let tagSet = new Set();
+    for (let item of collection) {
+      (item.data.tags || []).forEach(tag => tagSet.add(tag));
+    }
+    return Array.from(tagSet);
   });
 
-  eleventyConfig.addCollection("all", (collections) => {
-    // get all posts by tag 'art'
-    return (
-      collections
-        .getFilteredByTag("art")
-        // exclude all drafts
-        .filter((post) => !Boolean(post.data.all))
-    );
+  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
   // Set custom directories for input, output, includes, and data
@@ -24,11 +20,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/art-assets");
   return {
+
+    // Control which files Eleventy will process
+    // e.g.: *.md, *.njk, *.html, *.liquid
+    templateFormats: [
+      "md",
+      "njk",
+      "html",
+      "liquid",
+    ],
+
+    // Pre-process *.md files with: (default: `liquid`)
+    markdownTemplateEngine: "njk",
+
+    // Pre-process *.html files with: (default: `liquid`)
+    htmlTemplateEngine: "njk",
+
     dir: {
       input: "src",
-      includes: "_includes",
-      data: "_data",
       output: "_site",
+      includes: '_includes',
+      layouts: '_layouts'
     },
   };
 };
