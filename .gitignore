@@ -1,18 +1,3 @@
-# Misc
-*.log
-npm-debug.*
-*.scssc
-*.log
-*.swp
-.DS_Store
-Thumbs.db
-.sass-cache
-.env
-.cache
-
-# Node modules and output
-node_modules
-_site
-dist
-# Local Netlify folder
-.netlify
+_site/
+node_modules/
+package-lock.json

@@ -25,12 +25,7 @@
         <p>{{ date }}
         </div>
         <div class="cluster">
-        Tagged: 
-          {% for tag, posts in collections | dictsort %}
-            {%- if tag != "all" and tag != "posts" %}
-              <a href="/tags/{{ tag }}/">#{{ tag }}</a>
-            {% endif %}
-          {% endfor %}
+        Tagged: {% include "partials/tag-loop.njk" %}
         </div>
       </main>
     </body>

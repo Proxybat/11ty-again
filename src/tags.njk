@@ -1,19 +1,16 @@
 ---
-layout: taglist.njk
 pagination:
   data: collections
   size: 1
   alias: tag
-permalink: /tags/{{ tag | slugify }}/
+permalink: /tags/{{ tag }}/
+layout: indexpage.njk
 ---
+<h1>Tagged “{{ tag }}”</h1>
 
-<h1>Tagged “{{ tag | slugify }}”</h1>
-
-<ul>
-  {% set taglist = collections[tag] %}
-  {% for post in taglist | reverse %}
-    <li>
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<ol>
+{% set taglist = collections[ tag ] %}
+{% for post in taglist | reverse %}
+  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>

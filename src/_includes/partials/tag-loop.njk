@@ -1,5 +1,3 @@
-{% for tag, posts in collections | dictsort %}
-    {%- if tag != "all" and tag != "posts" %}
-        <a href="/tags/{{ tag | slugify }}/">{{ tags | slugify }}</a>
-    {% endif %}
+{% for tag in tags %}
+  <a href="/tags/{{ tag }}">{{ tag }}</a>
 {% endfor %}

@@ -29,10 +29,8 @@ title: my art gallery
                     <p class="post_description">{{ post.data.thumbDescription }}</p>
                     <div class="post_tags">
                         Tagged: 
-                        {% for tag, posts in collections | dictsort %}
-                            {%- if tag != "all" and tag != "posts" %}
-                                <a href="/tags/{{ tag }}/">#{{ tag }}</a>
-                            {% endif %}
+                        {% for tag in post.data.tags %}
+                            <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                 </div>
